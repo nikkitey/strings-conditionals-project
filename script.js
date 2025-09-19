@@ -1,14 +1,16 @@
 function runProject() {
-  // Concatenated String Variable
-  let firstName = "Nicole";
-  let favoriteDrink = "latte";
-  let cups = 2;
+  // Grab user input
+  let firstName = document.getElementById("name").value;
+  let favoriteDrink = document.getElementById("drink").value;
+  let cups = parseInt(document.getElementById("cups").value);
+  let size = document.getElementById("size").value;
 
-  let orderSummary = "Hello, " + firstName + "! You ordered " + cups + " " + favoriteDrink + "(s).";
-
-  // Output div
   let output = document.getElementById("output");
-  output.innerHTML = orderSummary + "<br>";
+  output.innerHTML = ""; // clear old results
+
+  // Concatenated String Variable
+  let orderSummary = "Hello, " + firstName + "! You ordered " + cups + " " + favoriteDrink + "(s).";
+  output.innerHTML += orderSummary + "<br>";
 
   // If Conditional
   if (cups > 3) {
@@ -18,7 +20,6 @@ function runProject() {
   }
 
   // Switch Statement
-  let size = "medium"; // change this to "small", "medium", "large"
   switch (size) {
     case "small":
       output.innerHTML += "You picked a small size. A quick pick-me-up!<br>";
@@ -42,3 +43,4 @@ function runProject() {
   let totalPrice = pricePerCup * cups;
   output.innerHTML += "Your total is $" + totalPrice.toFixed(2);
 }
+

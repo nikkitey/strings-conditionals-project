@@ -2,14 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Strings & Conditionals Project</title>
+  <title>Interactive Coffee Order</title>
 </head>
 <body>
   <h1>Personalized Coffee Order</h1>
-  <button onclick="runProject()">Place Order</button>
+
+  <form id="orderForm">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label for="drink">Favorite Drink:</label>
+    <input type="text" id="drink" placeholder="latte, cappuccino, etc." required><br><br>
+
+    <label for="cups">Number of Cups:</label>
+    <input type="number" id="cups" value="1" min="1" required><br><br>
+
+    <label for="size">Choose Size:</label>
+    <select id="size">
+      <option value="small">Small</option>
+      <option value="medium" selected>Medium</option>
+      <option value="large">Large</option>
+    </select><br><br>
+
+    <button type="button" onclick="runProject()">Place Order</button>
+  </form>
+
   <div id="output" style="margin-top:20px; font-family:Arial;"></div>
 
-  <!-- Link to JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
